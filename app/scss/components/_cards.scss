@@ -1,0 +1,26 @@
+.card {
+  background-color: rgb($whiteColor, .8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  @include shadow(0, 2.5rem, 4rem, rgba($blackColor, .5));
+  transition: transform .3s ease-out;
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.02);
+  }
+
+  &__title {
+    margin-bottom: 1.5rem;
+  }
+
+  &__icon {
+    font-size: 6rem;
+    display: inline-block;
+    @include gradient(to right, $primaryColorLight, $primaryColorDark);
+    background-clip: text;
+    color: transparent;
+    margin-bottom: .5rem;
+  }
+}

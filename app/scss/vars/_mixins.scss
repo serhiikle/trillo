@@ -1,0 +1,63 @@
+// GRADIENT
+
+@mixin gradient ($direction, $firstColor, $secondColor, $opacity: 1, $img: "") {
+  // with opacity ang with image
+  @if ($opacity != 1 and $img != "") {
+    background-image: linear-gradient($direction, rgba($firstColor, $opacity), rgba($secondColor, $opacity)), url($img);
+  }
+  // without opacity and with image
+  @else if ($opacity == 1 and $img != "") {
+    background-image: linear-gradient($direction, $firstColor, $secondColor), url($img);
+  }
+  // with opacity and without image
+  @else if ($opacity != 1 and $img == "") {
+    background-image: linear-gradient($direction, rgba($firstColor, $opacity), rgba($secondColor, $opacity));
+  }
+  // without opacity and without image
+  @else {
+    background-image: linear-gradient($direction, $firstColor, $secondColor);
+  }
+}
+
+// SHADOW
+
+@mixin shadow ($x, $y, $blur: 0, $color, $type: box, $spread: 0, $where: outset) {
+  // text shadow
+  @if ($type == text) {
+    // x, y, color
+    @if ($blur == 0 and $spread == 0 and $type != box and $where == outset) {
+      text-shadow: $x $y $color;
+    }
+    // x, y, color, blur
+    @if ($blur != 0 and $spread == 0 and $type != box and $where == outset) {
+      text-shadow: $x $y $blur $color;
+    }
+    // x, y, color, blur, spread
+    @if ($blur != 0 and $spread != 0 and $type != box and $where == outset) {
+      text-shadow: $x $y $blur $spread $color;
+    }
+    // x, y, color, blur, spread, where
+    @if ($blur != 0 and $spread != 0 and $type != box and $where != outset) {
+      text-shadow: $where $x $y $blur $spread $color;
+    }
+  }
+  // box-shadow
+  @else if ($type == box) {
+    // x, y, color
+    @if ($blur == 0 and $spread == 0 and $type == box and $where == outset) {
+      box-shadow: $x $y $color;
+    }
+    // x, y, color, blur
+    @if ($blur != 0 and $spread == 0 and $type == box and $where == outset) {
+      box-shadow: $x $y $blur $color;
+    }
+    // x, y, color, blur, spread
+    @if ($blur != 0 and $spread != 0 and $type == box and $where == outset) {
+      box-shadow: $x $y $blur $spread $color;
+    }
+    // x, y, color, blur, spread, where
+    @if ($blur != 0 and $spread != 0 and $type == box and $where != outset) {
+      box-shadow: $where $x $y $blur $spread $color;
+    }
+  }
+}
