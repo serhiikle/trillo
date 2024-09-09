@@ -39,3 +39,21 @@
     transform: translateY(0);
   }
 }
+
+// Pulsate
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  50% {
+    transform: scale(1.05);
+    @include shadow(0, 1rem, 4rem, rgba($blackColor, .25));
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}

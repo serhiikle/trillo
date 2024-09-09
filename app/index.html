@@ -56,11 +56,95 @@
       <div class="sidebar">
         <!-- menu -->
         <nav class="sidebar__menu">
-          navigation
+          <ul class="sidebar__menu-list">
+            <!-- menu item 1 -->
+            <li class="sidebar__menu-item item-active">
+              <a href="#" class="sidebar__menu-link">
+                <svg class="sidebar__menu-icon">
+                  <use xlink:href="images/sprite.svg#icon-home"></use>
+                </svg>
+                <span class="sidebar__menu-name">Hotel</span>
+              </a>
+            </li>
+            <!-- menu item 2 -->
+            <li class="sidebar__menu-item">
+              <a href="#" class="sidebar__menu-link">
+                <svg class="sidebar__menu-icon">
+                  <use xlink:href="images/sprite.svg#icon-aircraft-take-off"></use>
+                </svg>
+                <span class="sidebar__menu-name">Flight</span>
+              </a>
+            </li>
+            <!-- menu item 3 -->
+            <li class="sidebar__menu-item">
+              <a href="#" class="sidebar__menu-link">
+                <svg class="sidebar__menu-icon">
+                  <use xlink:href="images/sprite.svg#icon-key"></use>
+                </svg>
+                <span class="sidebar__menu-name">Car rental</span>
+              </a>
+            </li>
+            <!-- menu item 4-->
+            <li class="sidebar__menu-item">
+              <a href="#" class="sidebar__menu-link">
+                <svg class="sidebar__menu-icon">
+                  <use xlink:href="images/sprite.svg#icon-map"></use>
+                </svg>
+                <span class="sidebar__menu-name">Tours</span>
+              </a>
+            </li>
+          </ul>
         </nav>
+        <div class="sidebar__copyright">
+          &copy; 2024 by trillo. All rights reserved.
+        </div>
       </div>
-      <main class="hotel-overview">
-        hotel overview
+      <main class="hotel">
+        <div class="hotel__gallery">
+          <figure class="hotel__gallery-item">
+            <img src="images/hotel-1.jpg" alt="Hotel photo 1" class="hotel__gallery-image">
+          </figure>
+          <figure class="hotel__gallery-item">
+            <img src="images/hotel-2.jpg" alt="Hotel photo 2" class="hotel__gallery-image">
+          </figure>
+          <figure class="hotel__gallery-item">
+            <img src="images/hotel-3.jpg" alt="Hotel photo 3" class="hotel__gallery-image">
+          </figure>
+        </div>
+        <div class="hotel__overview">
+          <!-- hotel title -->
+          <h1 class="hotel__overview-title">Hotel Las Palmas</h1>
+          <!-- hotel stars -->
+          <div class="hotel__overview-stars">
+            <svg class="hotel__overview-icon">
+              <use xlink:href="images/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="hotel__overview-icon">
+              <use xlink:href="images/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="hotel__overview-icon">
+              <use xlink:href="images/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="hotel__overview-icon">
+              <use xlink:href="images/sprite.svg#icon-star"></use>
+            </svg>
+            <svg class="hotel__overview-icon">
+              <use xlink:href="images/sprite.svg#icon-star"></use>
+            </svg>
+          </div>
+          <!-- hotel location -->
+          <div class="hotel__overview-location">
+            <svg class="hotel__overview-icon">
+              <use xlink:href="images/sprite.svg#icon-location-pin"></use>
+            </svg>
+            <button class="btn">Albufeira, Portugal</button>
+          </div>
+          <!-- hotel rating -->
+          <div class="hotel__overview-rating">
+            <div class="hotel__overview-average">8.2</div>
+            <div class="hotel__overview-votes">429 votes</div>
+          </div>
+        </div>
       </main>
     </div>
   </div>
