@@ -20,10 +20,41 @@
 <body>
   <div class="container">
     <header class="header">
-      header
+      <!-- logo -->
+      <img class="header__logo" src="images/logo.png" alt="Trillo logo">
+      <!-- search -->
+      <form action="#" class="header__search">
+        <input type="text" class="header__search-input" placeholder="Search hotels...">
+        <button type="submit" class="header__search-button">
+          <svg class="header__search-icon">
+            <use xlink:href="images/sprite.svg#icon-magnifying-glass"></use>
+          </svg>
+        </button>
+      </form>
+      <div class="header__user">
+        <!-- user bookmark -->
+        <div class="header__user-box">
+          <svg class="header__user-icon">
+            <use xlink:href="images/sprite.svg#icon-bookmark"></use>
+          </svg>
+          <span class="header__user-notification">7</span>
+        </div>
+        <!-- user chat -->
+        <div class="header__user-box">
+          <svg class="header__user-icon">
+            <use xlink:href="images/sprite.svg#icon-chat"></use>
+          </svg>
+          <span class="header__user-notification">13</span>
+        </div>
+        <div class="header__user-account">
+          <img src="images/user.jpg" alt="User photo" class="header__user-photo">
+          <div class="header__user-name">Jonas</div>
+        </div>
+      </div>
     </header>
     <div class="content">
       <div class="sidebar">
+        <!-- menu -->
         <nav class="sidebar__menu">
           navigation
         </nav>

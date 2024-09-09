@@ -1,5 +1,125 @@
 .header {
   height: 7rem;
+  font-size: 1.4rem;
   background-color: $whiteColor;
   border-bottom: 1px solid $greyColor;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+
+  &__logo {
+    height: 3.25rem;
+  }
+
+  &__search {
+    flex: 0 0 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-input {
+      width: 90%;
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+      background-color: $greyColor;
+      border: none;
+      border-radius: 10rem;
+      padding: .7rem 4rem .7rem 2rem;
+      transition: all .2s ease-out;
+      margin-right: -3.5rem;
+
+      &:focus {
+        outline: none;
+        width: 100%;
+        background-color: $greyColorDarker;
+      }
+      
+      &::placeholder {
+        font-weight: 100;
+        color: $placeholderColor;
+      }
+    }
+
+    &-button {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      padding: 0;
+
+      &:focus {
+        outline: none;
+      }
+
+      &:active {
+        transform: translateY(2px);
+      }
+    }
+
+    &-icon {
+      width: 2rem;
+      height: 2rem;
+      fill: $greyColorDark;
+    }
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+
+    & > * {
+      padding: 0 2rem;
+      height: 100%;
+      cursor: pointer;
+      transition: all .3s ease-out;
+    }
+
+    & > *:hover {
+      background-color: $greyColor;
+    }
+
+    &-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    &-icon {
+      width: 2.25rem;
+      height: 2.25rem;
+      fill: $mainTextColor;
+    }
+
+    &-notification {
+      font-size: .8rem;
+      height: 1.75rem;
+      width: 1.75rem;
+      background-color: $primaryColorLight;
+      color: $whiteColor;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 1.75rem;
+      font-weight: 700;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    &-account {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    &-photo {
+      height: 3.75rem;
+      border-radius: 50%;
+    }
+
+    &-name {}
+  }
 }
