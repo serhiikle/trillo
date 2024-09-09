@@ -1,0 +1,367 @@
+/*==============================================================================
+==================================  BUTTONS ====================================
+==============================================================================*/
+
+.button,
+.button:link,
+.button:visited {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative;
+  // for tag button
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    transform: translateY(3px);
+    @include shadow(0, 1rem, 2rem, rgba($blackColor, .2));
+
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(1px);
+    @include shadow(0, .5rem, 1rem, rgba($blackColor, .2));
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10rem;
+    z-index: -1;
+    transition: all .4s;
+  }
+}
+
+.button--white {
+  background-color: $whiteColor;
+  color: $mainTextColor;
+
+  &::after {
+    background-color: $whiteColor;
+  }
+}
+
+.button--green {
+  background-color: $primaryColorDark;
+  color: $whiteColor;
+
+  &::after {
+    background-color: $primaryColorDark;
+  }
+}
+
+.button--animated {
+  animation: moveToTop .5s ease-out .7s;
+  animation-fill-mode: backwards;
+}
+
+.btn {
+  transition: all .3s ease-in;
+  &:link,
+  &:visited {
+    color: $primaryColorDarken;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $primaryColorDarken;
+    padding: 3px;
+  }
+
+  &:hover {
+    background-color: $primaryColorDarken;
+    color: $whiteColor;
+    @include shadow(0, 1rem, 2rem, rgba($blackColor, .2));
+    transform: translateY(-2px);
+
+    &:active {
+      @include shadow(0, .5rem, 1rem, rgba($blackColor, .2));
+      transform: translateY(-2px);
+    }
+  }
+}
+
+/*==============================================================================
+==================================== CARD =====================================
+==============================================================================*/
+
+.card {
+  background-color: rgb($whiteColor, .8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  @include shadow(0, 2.5rem, 4rem, rgba($blackColor, .5));
+  transition: transform .3s ease-out;
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.02);
+  }
+
+  &__title {
+    margin-bottom: 1.5rem;
+  }
+
+  &__icon {
+    font-size: 6rem;
+    display: inline-block;
+    @include gradient(to right, $primaryColorLight, $primaryColorDark);
+    background-clip: text;
+    color: transparent;
+    margin-bottom: .5rem;
+  }
+}
+
+/*==============================================================================
+=================================== FORM =======================================
+==============================================================================*/
+
+.form {
+  width: 50%;
+  padding: 6rem;
+
+  &__title {
+    margin-bottom: 4rem;
+  }
+
+  &__group {
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    &-box {
+      width: 45%;
+      display: inline-block;
+      margin-bottom: 4rem;
+    }
+  }
+
+  &__input {
+    font-size: 1.5rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 2rem;
+    border-radius: 2px;
+    border: none;
+    background-color: rgba($whiteColor, .5);
+    border-bottom: solid 3px transparent;
+    display: block;
+    width: 90%;
+    transition: all .3s;
+
+    &:focus {
+      outline: none;
+      @include shadow(0, 1rem, 2rem, rgba($blackColor, .1));
+      border-bottom: solid 3px $primaryColorDark;
+    }
+
+    &:focus:invalid {
+      border-bottom: solid 3px $colorSecondaryDark;
+    }
+
+    &::placeholder {
+      color: $placeholderColor;
+    }
+
+    &:placeholder-shown + .form__label {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-4rem);
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: .7rem;
+    transition: all .3s ease-out;
+
+    &-radio {
+      cursor: pointer;
+      position: relative;
+      padding-left: 5rem;
+    }
+  }
+
+  &__radio {
+    display: none;
+
+    &-btn {
+      width: 3rem;
+      height: 3rem;
+      border: 5px solid $primaryColorDark;
+      border-radius: 50%;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: -.5rem;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        border-radius: 50%;
+        height: 1.2rem;
+        width: 1.2rem;
+        background-color: $primaryColorDark;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity .3s;
+      }
+    }
+  }
+}
+
+// select custom btn
+.form__radio:checked ~ .form__label-radio .form__radio-btn::after {
+  opacity: 1;
+}
+
+/*==============================================================================
+=================================== POPUP ======================================
+==============================================================================*/
+
+.popup {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($blackColor, .8);
+  z-index: 3000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__wrapper {
+    width: 75%;
+    background-color: $whiteColor;
+    @include shadow(0, 2rem, 4rem, rgba($blackColor, .2));
+    opacity: 0;
+    transform: scale(.5);
+    transition: all .3s .2s;
+  }
+
+  // .popup__inner
+  &__inner {
+    display: grid;
+    grid-template-columns: 33% 67%;
+  }
+
+  // .popup__image
+  &__image {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // .popup__content
+  &__content {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  // .popup__title
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  // .popup__title-second
+  &__title-second {
+    margin-bottom: 1rem;
+  }
+
+  // .popup__text
+  &__text {
+    font-size: 1.4rem;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid $greyColor;
+    hyphens: auto;
+  }
+
+  // .popup__button
+  &__button {
+    margin-top: auto;
+  }
+
+  &__close {
+    position: absolute;
+    top: .8rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    display: inline-block;
+    line-height: 1;
+    padding: 1rem;
+
+    &:hover {
+      color: $primaryColorDark;
+    }
+  }
+}
+
+.popup:target .popup__wrapper {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*==============================================================================
+=================================== TITLE ======================================
+==============================================================================*/
+
+.title {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.title--extra-large {
+  display: inline-block;
+  font-size: 3.5rem;
+  @include gradient(to right, $primaryColorLight, $primaryColorDark);
+  background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem;
+  transition: transform .3s ease-out;
+
+  &:hover {
+    transform: skew(15deg, 2deg) scale(1.1);
+    //text-shadow: $textShadowDefault;
+    @include shadow(0, 1.5rem, 4rem, rgba($blackColor, .15), text);
+
+  }
+}
+
+.title--large {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}

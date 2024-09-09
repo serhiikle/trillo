@@ -1,6 +1,13 @@
-@import "base/base";
-@import "vars/vars";
-@import "components/components";
-@import "layouts/layouts";
+@import "reset";
+@import "vars";
+@import "mixins";
+@import "animations";
+@import "components";
+@import "global";
+@import "header";
+@import "sidebar";
+@import "hotel-overview";
+
+@import "footer";
 
 @import "_media";
