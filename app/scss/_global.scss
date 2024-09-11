@@ -37,12 +37,6 @@ img {
   display: block;
 }
 
-p {
-  &:not(:last-child) {
-    margin-bottom: 3rem;
-  }
-}
-
 .container {
   max-width: 120rem;
   margin: 8rem auto;
@@ -52,4 +46,12 @@ p {
 
 .content {
   display: flex;
+}
+
+.detail {
+  display: flex;
+  gap: 4.5rem;
+  padding: 4.5rem;
+  background-color: $mainBgColor;
+  border-bottom: 1px solid $greyColor;
 }
