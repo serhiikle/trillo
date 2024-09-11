@@ -11,7 +11,9 @@
 ===========================================================================*/
 
 @media (max-width: 75em) {
-  
+  .container {
+    margin: 0 auto;
+  }
 }
 
 /* ==========================================================================
@@ -19,7 +21,9 @@
 ===========================================================================*/
 
 @media (max-width: 68.75em) {
-
+  html {
+    font-size: 50%;
+  }
 }
 
 
@@ -44,7 +48,53 @@
 ===========================================================================*/
 
 @media (max-width: 56.25em) {
+  .content {
+    flex-direction: column;
+  }
 
+  .sidebar {
+    &__menu {
+      margin: 0;
+
+      &-list {
+        display: flex;
+      }
+
+      &-item {
+        flex: 1;
+
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+
+      &-link {
+        &:link,
+        &:visited {
+          justify-content: center;
+        }
+      }
+    }
+    &__copyright {
+      display: none;
+    }
+  }
+
+  .detail {
+    padding: 3rem;
+    gap: 3rem;
+  }
+
+  .description {
+    padding: 2rem;
+  }
+
+  .review {
+    &__item {
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+  }
 }
 
 /* ==========================================================================
@@ -76,7 +126,11 @@
 ===========================================================================*/
 
 @media (max-width: 40em) {
-
+  .description {
+    &__list {
+      display: inline-block;
+    }
+  }
 }
 
 /* ==========================================================================
@@ -84,7 +138,23 @@
 ===========================================================================*/
 
 @media (max-width: 36.875em) {
+  .detail {
+    flex-direction: column;
+  }
 
+  .description {
+    &__list {
+      display: flex;
+    }
+  }
+  
+  .sidebar {
+    &__menu {
+      &-icon {
+        display: none;
+      }
+    }
+  }
 }
 
 /* ==========================================================================
@@ -92,7 +162,15 @@
 ===========================================================================*/
 
 @media (max-width: 31.25em) {
-
+  .hotel {
+    &__overview {
+      &-title {
+        font-size: 1.6rem;
+        letter-spacing: 0;
+        padding: 1rem;
+      }
+    }
+  }
 }
 
 /* ==========================================================================
@@ -100,7 +178,38 @@
 ===========================================================================*/
 
 @media (max-width: 30em) {
+  .sidebar {
+    &__menu {
+      &-link {
+        font-size: 1.1rem;
+      }
+    }
+  }
 
+  .header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 2rem;
+    gap: 2rem;
+
+    &__search {
+      order: 1;
+      flex-basis: 100%;
+
+      &-input {
+        margin-right: 0;
+      }
+
+      &-icon {
+        transform: translateX(-3.5rem);
+      }
+    }
+    &__user {
+      &-notification {
+        top: -.5rem;
+      }
+    }
+  }
 }
 
 /* ==========================================================================
@@ -108,7 +217,45 @@
 ===========================================================================*/
 
 @media (max-width: 25.625em) {
+  .hotel {
+    &__overview {
+      flex-wrap: wrap;
+      justify-content: space-around;
 
+      &-title {
+        flex-basis: 100%;
+        text-align: center;
+      }
+
+      &-stars {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .sidebar {
+    &__menu {
+      &-link {
+        &:link,
+        &:visited {
+          padding: 1rem;
+        }
+      }
+    }
+  }
+
+  .book {
+    &__title {
+      font-size: 1.6rem;
+      padding: 0 2rem;
+    }
+  }
+
+  .description {
+    &__list {
+      display: block;
+    }
+  }
 }
 
 /* ==========================================================================

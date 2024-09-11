@@ -49,9 +49,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
   }
 
   &__users {
+    display: flex;
+
     &-photo {
       width: 4.5rem;
       height: 4.5rem;
