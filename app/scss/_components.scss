@@ -76,6 +76,10 @@
   background-color: transparent;
   cursor: pointer;
 
+  span {
+    display: inline-block;
+  }
+
   &,
   &:link,
   &:visited {
@@ -89,12 +93,17 @@
 
   &:hover {
     color: $secondaryBgColor;
+    transition: all .2s ease-in;
   }
 
   &:focus {
     outline: none;
     animation: pulsate 1s infinite;
   }
+}
+
+.btn:hover span {
+  transform: translateX(2px);
 }
 
 /*==============================================================================
